@@ -1,17 +1,18 @@
 function Exibir() {
     let num = document.getElementById('num')
     let numero = Number(num.value)
-    let resultado = document.getElementById('res')
-    resultado.innerHTML = 'Calculo <br>'
-    switch (numero) {
-        case 1:
-            for(let i=1; i<=10; i++){
-                let mult = 1 * i
-                resultado.innerHTML += `1 x ${i} = ${mult}<br>`
-            }
-            break;
-    
-        default:
-            break;
+    let resultado = document.getElementById('tab')
+    if (num.value == '') {
+        window.alert('Preencha o campo Número')
+    }
+    else{
+        let i = 1
+        resultado.innerHTML = '' // para que a tabuada calculada anteriormente nao seja mais exibida
+        while (i <= 10) {
+            let item = document.createElement('option') // crindo elementos dinamicamente
+            item.text = `${numero} x ${i} = ${numero*i}` // parte de dentro do option
+            resultado.appendChild(item) // adicionar o elemento filho
+            i++
+        }
     }
 }
