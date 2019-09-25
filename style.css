@@ -19,6 +19,9 @@ div {
     text-align: center;
     padding: 8px;
 }
+div#res{
+    text-align: left;
+}
 footer{
     color: white;
     text-align: center;
